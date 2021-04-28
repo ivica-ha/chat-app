@@ -1,20 +1,41 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './global-style.scss';
-import Message from './component/Message/Message';
 import Menu from './component/Menu/Menu';
-import ChatGroups from "./component/ChatGroups/ChatGroups";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Chat from "./component/Chat/Chat";
+import Profile from "./component/Profile/Profile";
+import Settings from "./component/Settings/Settings";
+import useDocumentBodyClass from "./hooks/useDocumentBodyClass";
 
 function App() {
+
+    const theme = localStorage.getItem('theme');
+    useDocumentBodyClass(theme);
+
+    const [member, setMember] = useState({});
+    const [messages, setMessages] = useState([]);
+
     return (
         <>
-            <Menu/>
-            <div className='container d-flex app-container'>
-                <ChatGroups/>
-                <div className='messages col-70'>
-                    <Message key={1}/>
-                    <Message key={2} currentUser={true}/>
+            <Router>
+                <Menu/>
+                <div className='container d-flex app-container'>
+                    <Switch>
+                        <Route path="/chat">
+                            <Chat />
+                        </Route>
+                        <Route path="/profile">
+                            <Profile/>
+                        </Route>
+                        <Route path="/settings">
+                            <Settings/>
+                        </Route>
+                        <Route exact path="/">
+                            <Chat />
+                        </Route>
+                    </Switch>
                 </div>
-            </div>
+            </Router>
         </>
     );
 }

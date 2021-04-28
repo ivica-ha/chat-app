@@ -4,14 +4,33 @@
   background: var(--theme-color-darker);
   padding: 7px 0;
 
+  .logo {
+    align-items: center;
+
+    img {
+      margin-right: 0.4em;
+      width: 20px;
+    }
+
+    span {
+      font-family: 'Source Code Pro', monospace;
+      font-size: 16px;
+      color: var(--theme-cta-color);
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
   .menu-icon {
-    justify-content: flex-end;
+    justify-content: space-between;
 
     .user-icon {
-      width: 30px;
       border-radius: 50%;
       height: 30px;
       object-fit: cover;
+      width: 30px;
     }
 
     .user-name {
@@ -25,16 +44,22 @@
   }
 
   .side-navigation {
+    background: var(--theme-color-darker);
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 180px;
+    padding: 10px;
     position: absolute;
     right: 0;
-    background: var(--theme-color-darker);
-    padding: 10px;
-    max-width: 180px;
     width: 100%;
-    margin-top: 10px;
+    z-index: 1;
 
     &--item {
       margin: 10px 0;
+
+      a {
+        text-decoration: none;
+      }
 
       svg {
         margin-right: 10px;

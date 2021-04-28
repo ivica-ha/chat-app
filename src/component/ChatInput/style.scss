@@ -1,0 +1,35 @@
+@import "../../colors";
+
+.chat-container {
+  align-items: center;
+  background: var(--theme-color-darker);
+  border-radius: 10px;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  width: calc(100% - 40px);
+
+  .chat-input {
+    background: transparent;
+    border: none;
+    color: var(--theme-text-color);
+    resize: none;
+    outline: none;
+    padding: 0.8em;
+  }
+
+  .chat-send {
+    align-items: center;
+    background: transparent;
+    background: var(--theme-messages-color);
+    border: none;
+    color: var(--theme-color);
+    cursor: pointer;
+    height: 40px;
+    justify-content: center;
+    width: 40px;
+  }
+}

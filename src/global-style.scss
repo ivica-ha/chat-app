@@ -7,33 +7,20 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block
+  vertical-align: baseline;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
   line-height: 1
 }
 
+p, div, span, a {
+  font-size: 12px;
+}
+
 ol, ul {
   list-style: none
-}
-
-blockquote, q {
-  quotes: none
-}
-
-blockquote:after, blockquote:before, q:after, q:before {
-  content: '';
-  content: none
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0
 }
 
 .d-flex {
@@ -42,6 +29,10 @@ table {
 
 .p-relative {
   position: relative;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 img {
@@ -64,6 +55,9 @@ p, div, a, span {
 
 .app-container {
   padding: 40px 0;
+  height: calc(100vh - 124px);
+  border-right: 1px solid var(--theme-color-darker);
+  border-left: 1px solid var(--theme-color-darker);
 }
 
 @for $i from 1 through 10 {
